@@ -1,0 +1,66 @@
+{
+  "name": "remote-menu-test-back",
+  "private": false,
+  "version": "1.0.0",
+  "description": "test backend for remote menu",
+  "main": "index.js",
+  "repository": "https://github.com/rRudchenko/remote-menu-test-back.git",
+  "author": "frankie <r.rudchenko@nton.info>",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "styleLint": "stylelint .",
+    "styleLint-fix": "stylelint . --fix"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-config-standard-react": "^9.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1",
+    "pretty-quick": "^3.0.2",
+    "stylelint": "^13.7.1",
+    "stylelint-config-standard": "^20.0.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "pretty-quick",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-react"],
+  "rules": {
+    "semi": "error",
+    "strict": "error",
+    "react/prop-types": 0,
+    "react/jsx-curly-newline": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "space-before-function-paren": 0,
+    "array-callback-return": 0,
+    "no-unused-vars": "off",
+    "comma-dangle": "off"
+  }
+}
