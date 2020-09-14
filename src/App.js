@@ -10,7 +10,6 @@ const App = () => {
     const response = await axios.get('/.netlify/functions/test01', {
       headers: { Accept: 'application/json' },
     })
-    console.log('\n\nhandle click response JSON:\n', response.data)
     setData({ loading: false, msg: response.data.msg })
   }
 
