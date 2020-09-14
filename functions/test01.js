@@ -5,7 +5,7 @@ exports.handler = async function handler(event, context) {
       headers: { Accept: 'application/json' },
     })
     const data = response.data
-    console.log(' JOKE:\n', data)
+    console.log(' JOKE:\n', data.joke)
     return {
       statusCode: 200,
       body: JSON.stringify({ msg: data.joke }),
