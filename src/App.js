@@ -7,13 +7,11 @@ const App = () => {
   const handleClick = async (e) => {
     e.preventDefault()
     setData({ loading: true, content: null })
-    // fetch('/.netlify/functions/' + api)
     const response = await axios.get('/.netlify/functions/test01', {
       headers: { Accept: 'application/json' },
     })
-    const myJson = await response.json()
-    console.log('\n\nhandle click response JSON:\n', myJson)
-    setData({ loading: false, msg: myJson.msg })
+    console.log('\n\nhandle click response JSON:\n', response.data)
+    setData({ loading: false, msg: response.data.msg })
   }
 
   return (
@@ -23,7 +21,7 @@ const App = () => {
       </div>
       <div>
         <button onClick={(e) => handleClick(e)}>
-          {data.loading ? 'Loading...' : 'Call test01'}
+          {data.loading ? 'Loading...' : 'Call lambda'}
         </button>
         {data.msg ? <h4>{data.msg}</h4> : <h5>no message</h5>}
       </div>

@@ -1,5 +1,5 @@
-import axios from 'axios'
-export async function handler(event, context) {
+const axios = require('axios')
+exports.handler = async function handler(event, context) {
   event ? console.log('\n\nevent:\n\n', event) : console.log('\n\n NO event\n\n')
   context ? console.log('\n\ncontext:\n\n', context) : console.log('\n\n NO context\n\n')
   try {
