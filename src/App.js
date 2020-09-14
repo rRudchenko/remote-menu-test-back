@@ -4,11 +4,11 @@ import axios from 'axios'
 const App = () => {
   const [data, setData] = useState({ loading: false, msg: null })
 
-  const handleClick = (api) => async (e) => {
+  const handleClick = async (e) => {
     e.preventDefault()
     setData({ loading: true, content: null })
     // fetch('/.netlify/functions/' + api)
-    const response = await axios.get('/.netlify/functions/' + api, {
+    const response = await axios.get('/.netlify/functions/test01', {
       headers: { Accept: 'application/json' },
     })
     const myJson = await response.json()
@@ -22,10 +22,10 @@ const App = () => {
         <h2>TEST TITLE</h2>
       </div>
       <div>
-        <button onClick={handleClick('test01')}>
+        <button onClick={(e) => handleClick(e)}>
           {data.loading ? 'Loading...' : 'Call test01'}
         </button>
-        {data.msg && <h4>{data.msg}</h4>}
+        {data.msg ? <h4>{data.msg}</h4> : <h5>no message</h5>}
       </div>
     </section>
   )
